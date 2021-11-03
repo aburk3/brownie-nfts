@@ -1,6 +1,11 @@
 from brownie import AdvancedCollectible, accounts, config, interface, network
 
 
+def get_breed(breed_number):
+    switch = {0: "PUG", 1: "SHIBA_INU", 2: "ST_BERNARD"}
+    return switch[breed_number]
+
+
 def fund_advanced_collectible(nft_contract):
     dev = accounts.add(config["wallets"]["from_key"])
     # How we get ABI
